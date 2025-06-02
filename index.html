@@ -123,12 +123,9 @@
             document.getElementById('nameError').textContent = "Поле 'Ваше имя' должно быть заполнено.";
             hasError = true;
         }
-        if (!phone) {
-            document.getElementById('phoneError').textContent = "Поле 'Телефон' должно быть заполнено.";
-            hasError = true;
-        }
-        if (!email) {
-            document.getElementById('emailError').textContent = "Поле 'Электронная почта' должно быть заполнено.";
+        if (!phone && !email) {
+            document.getElementById('phoneError').textContent = "Поле 'Телефон' или 'Электронная почта' должно быть заполнено.";
+            document.getElementById('emailError').textContent = "Поле 'Телефон' или 'Электронная почта' должно быть заполнено.";
             hasError = true;
         }
         if (!message) {
