@@ -86,10 +86,19 @@
 </div>
 
 <script>
-    document.getElementById('phone').addEventListener('focus', function() {
+         const phoneInput = document.getElementById('phone');
+
+    phoneInput.addEventListener('focus', function() {
         // Если поле пустое, добавляем +7
         if (this.value === "") {
             this.value = "+7";
+        }
+    });
+
+    phoneInput.addEventListener('blur', function() {
+        // Если поле содержит только +7 (без других символов), очищаем его
+        if (this.value === "+7") {
+            this.value = ""; // Очищаем поле
         }
     });
 
